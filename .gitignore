@@ -1,0 +1,6 @@
+/outputs
+/.venv
+*.ipynb
+*.pdf
+*.png
+*.txt
