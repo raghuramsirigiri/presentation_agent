@@ -37,10 +37,10 @@ The orchestrator coordinates the process by routing to these specialized sub-ski
   > *"Are there any specific, important business questions or hypotheses you want this analysis to answer?"*
 - Log initial scoping parameters and bind them to the timestamped run directory.
 
-### Step 2: Planning & Iterative Subagent Execution Loop
+### Step 2: Planning & Iterative Cognitive Analysis Loop
 - Trigger **`presentation-agent-execution`**.
 - Divide the approved questions into baseline analytical modules.
-- **Iterative Diagnostic Loop**: Programmatically run the baseline notebooks, analyze the results for statistical anomalies (spikes, margin leaks, cohort decay) using dynamically calculated metrics (IQR, Z-scores, percentiles, Pareto cuts) with zero hardcoded thresholds, and dynamically spawn subsequent subagents to build deep-dive notebooks investigating the root causes (up to 3 levels of depth).
+- **Cognitive Analytical Loop**: The execution agent operates as a lead analyst. After programmatically running the baseline notebooks, it must look at ALL the results collectively and *think* about what further analysis can be done based on the existing findings. It will iteratively spawn subsequent subagents to build deep-dive notebooks to pursue these new hypotheses. It continues this loop until it is completely satisfied that no further meaningful insights can be extracted, or until it maxes out at **5 levels of depth**.
 - Compile a complete, hierarchical lineage trail log of all executed notebooks.
 
 
