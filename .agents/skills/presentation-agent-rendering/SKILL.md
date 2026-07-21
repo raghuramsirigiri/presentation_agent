@@ -76,9 +76,12 @@ Use this skill to convert consulting slide storyboards into beautiful, interacti
 
 ### Step 4: Export to Target Format
 - Output the HTML deck file (`presentation.html`) directly inside the current run folder: `outputs/run_YYYYMMDD_HHMMSS/presentation.html`.
-- **Compile to PDF (Primary Deliverable)**: Compile the HTML slides to a print-ready vector PDF using Google Chrome's headless print command on Windows:
+- **Compile to PDF (Primary Deliverable)**: Compile the HTML slides to a print-ready vector PDF using Google Chrome's headless print command on Windows. You MUST use `Start-Process -Wait` and absolute paths to ensure it doesn't fail silently:
   ```powershell
-  & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless --disable-gpu --print-to-pdf="outputs\run_YYYYMMDD_HHMMSS\presentation.pdf" --no-margins --include-background-colors outputs\run_YYYYMMDD_HHMMSS\presentation.html
+  $htmlPath = (Resolve-Path "outputs\run_YYYYMMDD_HHMMSS\presentation.html").Path
+  $pdfPath = (Join-Path (Get-Location).Path "outputs\run_YYYYMMDD_HHMMSS\presentation.pdf")
+  $arguments = "--headless=new", "--disable-gpu", "--print-to-pdf=`"$pdfPath`"", "--no-margins", "--include-background-colors", "`"$htmlPath`""
+  Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList $arguments -Wait -NoNewWindow
   ```
 - **Compile to PPTX**: If PPTX is explicitly preferred, translate the slide coordinates and layout shapes into XML PPTX format via python script.
 
