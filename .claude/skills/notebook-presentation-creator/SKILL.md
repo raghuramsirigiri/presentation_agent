@@ -1,6 +1,6 @@
 ---
 name: notebook-presentation-creator
-description: Automatically scans workspaces, performs impactful analytical updates with a notebook trail, synthesizes insights like a McKinsey/BCG consultant, and compiles slide decks with Economist-style HTML charts.
+description: Automatically scans workspaces, performs impactful analytical updates with a notebook trail, synthesizes insights like a McKinsey/BCG consultant, and compiles slide decks with hybrid McKinsey/Economist-style HTML charts.
 risk: safe
 date_added: "2026-07-19"
 version: "1.0.1"
@@ -8,7 +8,7 @@ version: "1.0.1"
 
 # Notebook Presentation Creator
 
-This is the orchestrator skill that coordinates a multi-step analytical and presentation workflow. It delegates specific tasks to specialized subagents and sub-skills to scan a directory, perform additional calculations, write clean Jupyter Notebook trails, draft BCG/McKinsey-style slides, and compile them into stunning Economist-style HTML/PDF slide decks.
+This is the orchestrator skill that coordinates a multi-step analytical and presentation workflow. It delegates specific tasks to specialized subagents and sub-skills to scan a directory, perform additional calculations, write clean Jupyter Notebook trails, draft BCG/McKinsey-style slides, and compile them into stunning McKinsey/Economist hybrid HTML/PDF slide decks.
 
 ## When to Use This Skill
 
@@ -52,10 +52,10 @@ The orchestrator coordinates the process by routing to these specialized sub-ski
   - **Right Column**: Structured Key Takeaways panel with bold leading-word bullets.
 - Write the storyboard outline file (`storyboard.md`) inside the active run directory.
 
-### Step 4: Economist-Style Slide Rendering & Compilation (PDF/PPTX)
+### Step 4: McKinsey/Economist-Style Slide Rendering & Compilation (PDF/PPTX)
 - Trigger **`presentation-agent-rendering`**.
 - Compile slide structures into print-ready, minimalist, 16:9 landscape HTML templates implementing the 2-column grid layout (Left: Chart, Right: Bullet list) and bottom attribution footers.
-- Generate custom-coded HTML/CSS/SVG charts using a vibrant palette, direct value labeling, and detail annotations (arrows, highlight callouts).
+- Generate custom-coded HTML/CSS/SVG charts using a McKinsey-aligned palette (deep blues, high contrast professional neutrals), direct value labeling, and detail annotations (arrows, highlight callouts).
 - Export slide files directly into the active run directory as `presentation.html`, then trigger a headless compile step (e.g. via Chrome on Windows) to output a vector-perfect PDF (`presentation.pdf`) or PPTX (`presentation.pptx`) as the primary final deliverable.
 - **Post-Generation Validation & Correction**: Run visual check validations (structural grid checks, vector bounds audits, and placeholder scanning). If any defects are discovered, automatically loop back to re-generate the visual structures, continuing until the slide outputs achieve absolute correctness (up to 3 correction iterations).
 

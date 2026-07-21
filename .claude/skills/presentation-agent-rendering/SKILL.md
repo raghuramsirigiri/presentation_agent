@@ -8,7 +8,7 @@ version: "1.0.0"
 
 # Presentation Agent: Slide & Economist Chart Rendering
 
-This skill compiles structured slide outlines into high-fidelity HTML/CSS files, combining Apple Human Interface Guidelines (HIG) for layout/text with the annotated, custom charts of *The Economist*.
+This skill compiles structured slide outlines into high-fidelity HTML/CSS files, combining McKinsey corporate layouts and aesthetics with the annotated, custom charts of *The Economist*.
 
 ## When to Use
 
@@ -16,21 +16,22 @@ Use this skill to convert consulting slide storyboards into beautiful, interacti
 
 ## Visual Design Rules
 
-### 1. Minimalist & Apple Human Centric Layouts
-- **Typography & Scale**: Use a clean, premium sans-serif hierarchy (SF Pro, Inter, or Outfit) with generous leading (line-height `1.5` to `1.65`). Slide titles should use a lighter weight (e.g. `300` or `400`) to feel elegant and airy, while key numbers use bold weights.
+### 1. McKinsey Corporate Aesthetics & Layouts
+- **Typography & Scale**: Use a clean, premium sans-serif hierarchy (Arial, Helvetica, or Inter) with generous leading (line-height `1.5` to `1.65`). Slide titles should use a lighter weight (e.g. `300` or `400`) to feel elegant and airy, while key numbers use bold weights.
 - **Vast Negative Space**: Use spacious paddings (minimum `48px` to `80px` page borders) and wide margins between layout elements. Slides must fit exactly in `16in x 9in` boundaries without clipping.
 - **Flat Soft Containers**: Do not use any borders, box-shadows, or vertical/horizontal division lines. Slide components should be separated using clean negative space and flat, premium neutral background colors:
-  - Slide backgrounds: Warm off-white (`#fbfbfa`) or clean Apple white (`#ffffff`).
-  - Key Takeaway panels: Soft light warm-grey tints (`#f5f5f7` or `#f8fafc`) with soft rounded corners (`12px` to `16px` border-radius).
-  - Primary text color: Dark charcoal `#1d1d1f`.
+  - Slide backgrounds: Clean white (`#ffffff`).
+  - Key Takeaway panels: Borderless or very subtle light blue/grey (`#f0f4f8`) with soft rounded corners (`12px` to `16px` border-radius).
+  - Primary text color: Dark McKinsey Blue (`#051c2c`) or standard dark charcoal.
 - Use a single visual focus per slide (e.g., one huge chart container, left-aligned text blocks).
 
-### 2. Economist-Style Charts (Charts Only)
-- **Signature Accent Line**: A thin crimson banner (`#e3120b`, 4px height) at the top of the chart card.
+### 2. McKinsey/Economist Hybrid Charts (Charts Only)
+- **Signature Accent Line**: A deep blue banner (`#051c2c` or `#00508f`, 4px height) at the top of the chart card.
+- **Chart Palette**: Use McKinsey's deep blue (`#051c2c`), mid blue (`#00508f`), and highlight accents like light blue (`#00a9e0`).
 - **Annotated Data Points**: Overlay SVG path arrows or callout text boxes directly on top of coordinates to highlight spikes or drops.
 - **Direct Axis Labeling**: Write text labels next to line ends or bar ends rather than placing them in separate color legends.
 - **Clean Gridlines**: Subtle horizontal gridlines only (`#e5e7eb`); hide vertical grids.
-- **Cohesive Fonts**: PT Serif/Georgia for chart headers; Outfit/Inter for data values.
+- **Cohesive Fonts**: Arial/Helvetica for chart headers; Arial/Inter for data values.
 
 
 ## Ordered Steps
@@ -38,8 +39,8 @@ Use this skill to convert consulting slide storyboards into beautiful, interacti
 ### Step 1: Create Slide Markup
 - Apply a zero-dependency HTML layout utilizing flexbox or CSS grid.
 - **McKinsey/BCG Slide Layout**: Structure each content slide as a 2-column grid:
-  - **Left Column**: The `.economist-chart-card` container (enforcing 60-65% width share) containing the title, subtitle, SVG canvas, and annotations. Keep this card completely flat (no borders, no box-shadows, transparent/white background) and render Economist-style charts inside it.
-  - **Right Column**: The `.key-takeaways-panel` container (35-40% width share), styled as a flat Apple-style premium panel with a light warm-grey background (`#f5f5f7`), soft rounded corners (`12px` to `16px` border-radius), zero box-shadows, zero borders, and left-aligned text with SF Pro / Inter / Outfit fonts and bullet points starting with bold tags (`<strong>`) for immediate executive readability.
+  - **Left Column**: The `.economist-chart-card` container (enforcing 60-65% width share) containing the title, subtitle, SVG canvas, and annotations. Keep this card completely flat (no borders, no box-shadows, transparent/white background) and render McKinsey/Economist-style charts inside it.
+  - **Right Column**: The `.key-takeaways-panel` container (35-40% width share), styled as a flat premium panel with a subtle light blue/grey background (`#f0f4f8`), soft rounded corners (`12px` to `16px` border-radius), zero box-shadows, zero borders, and left-aligned text with Arial / Helvetica / Inter fonts and bullet points starting with bold tags (`<strong>`) for immediate executive readability.
 - **Footer Section**: Place absolute-positioned attribution footnotes (`.slide-attribution`) and slide page counts at the bottom of the slide.
 
 - Integrate modern CSS transitions for fade-in animations on page load.
@@ -82,7 +83,7 @@ Immediately after compiling `presentation.pdf`, the agent must visually check th
   1. **Text Overlap Audit**: Ensure no text labels (such as SVG numeric markers, axis coordinates, or legend annotations) intersect or collide with adjacent text nodes or gridlines.
   2. **Container Boundaries Check**: Confirm that no chart, line, or bar visual extends outside the bounding border of the `.economist-chart-card` card canvas.
   3. **Responsive Grid Splits**: Verify that the slide forms a balanced 2-column layout (60% left visual, 40% right textual takeaways) with distinct, clear horizontal gutter margins.
-  4. **Header Alignment**: Ensure the signature crimson top border (`#e3120b`, 4px banner) aligns perfectly with the slide title baseline, with zero vertical gap offsets.
+  4. **Header Alignment**: Ensure the signature deep blue top border (`#051c2c`, 4px banner) aligns perfectly with the slide title baseline, with zero vertical gap offsets.
   5. **Direct Label Proximity**: Verify that axis data labels are positioned directly adjacent to line endpoints or bar ends to allow immediate correlation without separate color legends.
   6. **Background Contrast Check**: Confirm all text colors satisfy contrast ratios against background fills (e.g., dark charcoal `#0f172a` text on off-white `#f8f9fa` slides, and clean white text on the dark cover slide).
   7. **Bullet Lead-In Styling**: Ensure takeaway lists contain bold headers (`<strong>`) for executive scanning, with clean line-height margins.

@@ -28,7 +28,7 @@ Use this skill after the analysis notebooks are successfully run and you need to
 ### 3. McKinsey/BCG Structured Slide Layouts
 - **Header**: Single declarative sentence bold active headline.
 - **Core Grid (2-Column Slide Layout)**:
-  - **Left Column (Visual)**: Custom Economist-style vector chart or table containing key value markers and highlight annotations.
+  - **Left Column (Visual)**: Custom McKinsey/Economist hybrid vector chart or table containing key value markers and highlight annotations.
   - **Right Column (Context/Text)**: A **Key Takeaways Panel** containing 2-3 bullet points with bold lead-in summaries (e.g., **• Segment Outlier**: Cashback cards represent a disproportionate 4.8% churn...).
 - **Footer**: Attribution footnote (e.g. *"Source: E-Commerce Transaction Logs, 2024-2025"*) and Slide count.
 
