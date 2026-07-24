@@ -1,12 +1,12 @@
 ---
 name: presentation-agent-synthesis
-description: Translates notebook data points into McKinsey/BCG style slide-by-slide outlines using the Pyramid Principle.
+description: Translates notebook data points into McKinsey/BCG/Figma style slide-by-slide outlines using the Pyramid Principle.
 risk: safe
 date_added: "2026-07-19"
 version: "1.0.0"
 ---
 
-# Presentation Agent: McKinsey/BCG Consulting Synthesis
+# Presentation Agent: McKinsey/BCG/Figma Consulting Synthesis
 
 This skill translates statistical results into a structured management presentation narrative. It applies consulting frameworks to focus only on highly critical insights that lead to strategic recommendations.
 
@@ -25,7 +25,7 @@ Use this skill after the analysis notebooks are successfully run and you need to
 - Never write passive titles (e.g., "Revenue Trends" or "Failed Logins").
 - Every slide title must be an active, complete statement explaining the *what* and *why* (e.g., "Web Login Failures are Flat, While Mobile Success Rates Dropped 14% Since December").
 
-### 3. McKinsey/BCG Structured Slide Layouts (For Data Slides)
+### 3. McKinsey/BCG/Figma Structured Slide Layouts (For Data Slides)
 - **Header**: Single declarative sentence bold active headline.
 - **Core Grid (2-Column Slide Layout)**:
   - **Left Column (Visual)**: Custom McKinsey/Economist hybrid vector chart or table containing key value markers and highlight annotations.
@@ -45,7 +45,7 @@ A professional presentation is not just data slides. You must structure the over
 - Scan the generated notebook trail to pull out key statistics, coefficients, outlier peaks, and totals.
 
 ### Step 2: Establish Presentation Narrative Outline
-- Structure the deck to fit standard McKinsey/BCG flow (Executive Summary, Market/Revenue Trends, Friction Points/Leakage, Opportunities, Remediation Impact).
+- Structure the deck to fit standard McKinsey/BCG/Figma flow (Executive Summary, Market/Revenue Trends, Friction Points/Leakage, Opportunities, Remediation Impact).
 
 ### Step 3: Outline Each Slide
 Draft each slide by first declaring its `Type` (e.g., `Type: Title`, `Type: Agenda`, `Type: Content`, `Type: Conclusion`).
