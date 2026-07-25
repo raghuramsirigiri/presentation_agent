@@ -20,10 +20,10 @@ The orchestrator coordinates the process by routing to these specialized sub-ski
 
 | Phase | Task | Sub-Skill Folder |
 |-------|------|------------------|
-| **Phase 1 & 2** | Discovery & Scoping | [presentation-agent-discovery](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.claude/skills/presentation-agent-discovery/SKILL.md) |
-| **Phase 3 & 4** | Execution Trail | [presentation-agent-execution](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.claude/skills/presentation-agent-execution/SKILL.md) |
-| **Phase 5** | McKinsey/BCG Narrative | [presentation-agent-synthesis](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.claude/skills/presentation-agent-synthesis/SKILL.md) |
-| **Phase 6 & 7** | Slide/Chart Render | [presentation-agent-rendering](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.claude/skills/presentation-agent-rendering/SKILL.md) |
+| **Phase 1 & 2** | Discovery & Scoping | [presentation-agent-discovery](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.agents/skills/presentation-agent-discovery/SKILL.md) |
+| **Phase 3 & 4** | Execution Trail | [presentation-agent-execution](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.agents/skills/presentation-agent-execution/SKILL.md) |
+| **Phase 5** | McKinsey/BCG Narrative | [presentation-agent-synthesis](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.agents/skills/presentation-agent-synthesis/SKILL.md) |
+| **Phase 6 & 7** | Slide/Chart Render | [presentation-agent-rendering](file:///C:/Users/raghu/Documents/AG%20Projects/presentation_agent/.agents/skills/presentation-agent-rendering/SKILL.md) |
 
 ---
 
