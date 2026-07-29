@@ -24,12 +24,14 @@ Use this skill to convert consulting slide storyboards into beautiful, interacti
   - Key Takeaway panels: Flat, premium minimalist panels (`#f0f4f8` or `#e8e8ed`) with modern soft rounded corners (`16px` to `24px` border-radius).
   - Primary text color: Sleek dark grey (like Apple's `#1d1d1f`) or Figma charcoal (`#333333`).
 - Use a single visual focus per slide (e.g., one huge chart container, left-aligned text blocks).
+- **Information Density & Text Constraints**: Be as descriptive as possible with the text on the slide, but **strictly ensure there is absolutely no text overflow**. Adjust font sizes, line heights, or paddings dynamically to accommodate descriptive text within bounds.
 
 ### 2. McKinsey/Economist Hybrid Charts (Charts Only)
 - **Signature Accent Line**: A sleek minimalist Apple-style accent line or Figma vibrant gradient banner (4px height) at the top of the chart card.
 - **Chart Palette (Apple/Figma/Minimalist)**: Combine McKinsey/Economist data storytelling with a vibrant, modern minimalist palette. Use iOS Blue (`#007aff`), Figma Purple (`#A259FF`), vibrant clean accents (`#34c759`), and minimalist neutral greys (`#86868b`) for secondary/inactive data.
 - **Annotated Data Points**: Overlay SVG path arrows or callout text boxes directly on top of coordinates to highlight spikes or drops.
 - **Direct Axis Labeling**: Write text labels next to line ends or bar ends rather than placing them in separate color legends.
+- **Chart Scaling**: The chart must **not stick to just one corner**. The chart must fill the entire container completely and proportionally. **It must not look stretched**. Use responsive viewBox scaling (`preserveAspectRatio="xMidYMid meet"`) or dynamic coordinate generation to ensure the chart occupies all available space within the `.economist-chart-card` without distortion.
 - **Clean Gridlines**: Subtle horizontal gridlines only (`#e5e7eb`); hide vertical grids.
 - **Cohesive Fonts**: Arial/Helvetica for chart headers; Arial/Inter for data values.
 
@@ -74,7 +76,10 @@ Use this skill to convert consulting slide storyboards into beautiful, interacti
 - Include keys (arrows, space) and mouse/swipe events to slide forward/backward.
 - Add toggleable sidebar for notes.
 
-### Step 4: Export to Target Format
+### Step 4: Add Supporting Data Appendix
+- **Appendix Generation**: For all charts generated in the presentation, append an "Appendix" section at the end of the slide deck. This section must contain all the supporting data (in tables or raw JSON formats) necessary to exactly recreate the charts. This allows stakeholders to audit the precise metrics used.
+
+### Step 5: Export to Target Format
 - Output the HTML deck file (`presentation.html`) directly inside the current run folder: `outputs/run_YYYYMMDD_HHMMSS/presentation.html`.
 - **Compile to PDF (Primary Deliverable)**: Compile the HTML slides to a print-ready vector PDF using Google Chrome's headless print command on Windows. You MUST use `Start-Process -Wait` and absolute paths to ensure it doesn't fail silently. Include `--window-size=1920,1080` to enforce a 16:9 aspect ratio and eliminate whitespace at the edges:
   ```powershell

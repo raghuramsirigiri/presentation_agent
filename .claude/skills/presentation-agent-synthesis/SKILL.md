@@ -41,11 +41,11 @@ A professional presentation is not just data slides. You must structure the over
 
 ## Ordered Steps
 
-### Step 1: Ingest Notebook Outputs
-- Scan the generated notebook trail to pull out key statistics, coefficients, outlier peaks, and totals.
+### Step 1: Ingest Reviewer Insights & Data
+- Consume the final synthesized insights, supporting data, and proposed charts provided by the Expert Reviewer.
 
 ### Step 2: Establish Presentation Narrative Outline
-- Structure the deck to fit standard McKinsey/BCG/Figma flow (Executive Summary, Market/Revenue Trends, Friction Points/Leakage, Opportunities, Remediation Impact).
+- Structure the deck to fit standard McKinsey/BCG slide layouts (Executive Summary, Market/Revenue Trends, Friction Points/Leakage, Opportunities, Remediation Impact).
 
 ### Step 3: Outline Each Slide
 Draft each slide by first declaring its `Type` (e.g., `Type: Title`, `Type: Agenda`, `Type: Content`, `Type: Conclusion`).
@@ -55,6 +55,7 @@ For `Content` slides, enforce the 2-column layout:
 3. **Left Column (Visual Specification)**: Chart type, specific labels, and target SVG annotations.
 4. **Right Column (Bullet points)**: Structured Key Takeaways list with bold leading words.
 5. **Footer**: Data source attribution.
+**Crucial Constraint**: Plan the slide structure to be as compact as possible, leaving very little free space on the slide to maximize information density.
 For supporting slides (Title, Agenda, Conclusion), provide the necessary structural text (Title, bullet points, etc.) tailored to their purpose.
 
 ## Output Contract
