@@ -37,14 +37,20 @@ The orchestrator coordinates the process by routing to these specialized sub-ski
   > *"Are there any specific, important business questions or hypotheses you want this analysis to answer?"*
 - Log initial scoping parameters and bind them to the timestamped run directory.
 
-### Step 2: Planning & Iterative Cognitive Analysis Loop
+### Step 2: Execution & Parallel Basic EDA
 - Trigger **`presentation-agent-execution`**.
-- Divide the approved questions into baseline analytical modules.
-- **Cognitive Analytical Loop**: The execution agent operates as a lead analyst. After programmatically running the baseline notebooks, it must look at ALL the results collectively and *think* about what further analysis can be done based on the existing findings. It will iteratively spawn subsequent subagents to build deep-dive notebooks to pursue these new hypotheses. It continues this loop until it is completely satisfied that no further meaningful insights can be extracted, or until it maxes out at **5 levels of depth**.
+- The execution agent takes a list of scoping questions.
+- It creates multiple subagents to run basic Exploratory Data Analysis (EDA) in parallel for each question.
+- It explicitly stores all relevant generated data, tables, and statistics locally in the active run directory.
+
+### Step 3: Expert Review & Deep-Dive Hypothesis Testing
+- Trigger **`presentation-agent-expert-reviewer`**.
+- The reviewer consumes and reviews all the parallel EDA analysis from Step 2.
+- It acts as the loop controller: synthesizing insights, identifying gaps, and formulating new hypotheses.
+- It then spawns a new wave of **multiple parallel subagents** to conduct deep-dive EDA and Hypothesis testing. It repeats this review-and-spawn loop until hypotheses are comprehensively resolved.
 - Compile a complete, hierarchical lineage trail log of all executed notebooks.
 
-
-### Step 3: McKinsey/BCG Insight Synthesis
+### Step 4: McKinsey/BCG Insight Synthesis
 - Trigger **`presentation-agent-synthesis`**.
 - Filter out raw code details; structure the slides top-down using the Minto Pyramid Principle.
 - Design active, bold headlines and map the narrative to a strict **2-column McKinsey/BCG slide grid**:
@@ -52,10 +58,11 @@ The orchestrator coordinates the process by routing to these specialized sub-ski
   - **Right Column**: Structured Key Takeaways panel with bold leading-word bullets.
 - Write the storyboard outline file (`storyboard.md`) inside the active run directory.
 
-### Step 4: McKinsey/Economist-Style Slide Rendering & Compilation (PDF/PPTX)
+### Step 5: McKinsey/Economist-Style Slide Rendering & Compilation (PDF/PPTX)
 - Trigger **`presentation-agent-rendering`**.
+- Look at the slide layout plan to create the final design. UI components and overall aesthetic must use **Figma/McKinsey design**.
 - Compile slide structures into print-ready, minimalist, 16:9 landscape HTML templates implementing the 2-column grid layout (Left: Chart, Right: Bullet list) and bottom attribution footers.
-- Generate custom-coded HTML/CSS/SVG charts using a McKinsey-aligned palette (deep blues, high contrast professional neutrals), direct value labeling, and detail annotations (arrows, highlight callouts).
+- Generate custom-coded HTML/CSS/SVG charts using a McKinsey-aligned palette, creating charts strictly like **The Economist**.
 - Export slide files directly into the active run directory as `presentation.html`, then trigger a headless compile step (e.g. via Chrome on Windows) to output a vector-perfect PDF (`presentation.pdf`) or PPTX (`presentation.pptx`) as the primary final deliverable.
 - **Post-Generation Validation & Correction**: Run visual check validations (structural grid checks, vector bounds audits, and placeholder scanning). If any defects are discovered, automatically loop back to re-generate the visual structures, continuing until the slide outputs achieve absolute correctness (up to 3 correction iterations).
 

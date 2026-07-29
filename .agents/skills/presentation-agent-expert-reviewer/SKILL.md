@@ -16,22 +16,24 @@ Use this skill after the execution phase or anytime an analysis result is genera
 
 ## Ordered Steps
 
-### Step 1: Review Current Analysis
-- Carefully read the output, tables, and visualizations produced by the previous analytical steps.
+### Step 1: Consume Parallel EDA Outputs
+- Ingest and carefully read the output, tables, statistics, and visualizations produced by the parallel baseline EDA subagents from the execution phase.
 - Summarize the key findings from an executive perspective (What is the bottom line? Why does it matter?).
 
 ### Step 2: Critical Thinking & Gap Identification
 - Ask: "What is missing here?"
-- Identify confounding variables, secondary effects, or deeper root causes that the current analysis does not explain.
+- Identify confounding variables, secondary effects, or deeper root causes that the current baseline analysis does not explain.
 - Are there anomalies or outliers that warrant their own investigation?
 
 ### Step 3: Formulate Next-Level Questions
-- Draft 1-3 specific, actionable follow-up questions or hypotheses that require further data analysis.
+- Draft specific, actionable follow-up questions or hypotheses that require further data analysis.
 - Example: "The initial analysis shows user retention dropped in Q3. The deeper question is: *Did this drop occur uniformly across all cohorts, or was it isolated to a specific demographic or acquisition channel?*"
 
-### Step 4: Continue the Loop or Conclude
-- If there are meaningful follow-up questions, instruct the execution/analysis agents to answer them, creating an iterative loop.
-- If the analysis is comprehensive and no further insights can be reasonably extracted from the data, summarize the final synthesized insights and conclude the loop.
+### Step 4: Parallel Hypothesis Testing Loop
+- If there are meaningful follow-up questions, **create multiple parallel subagents again** to conduct deep-dive EDA and Hypothesis testing on these specific new questions.
+- You act as the loop controller: wait for these deep-dive subagents to return their results, and then repeat the review process from Step 1.
+- Continue this review-and-spawn loop iteratively until the topic is thoroughly exhausted.
+- If the analysis is comprehensive and no further insights can be reasonably extracted from the data, summarize the final synthesized insights and conclude the loop, passing the insights and supporting data forward for presentation structuring.
 
 ## Output Contract
 Return a structured Markdown report containing:
